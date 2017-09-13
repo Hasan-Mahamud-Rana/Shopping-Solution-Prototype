@@ -1,0 +1,22 @@
+﻿var countries = {
+    "AD": "1005214 | Boss Skjorte, Red | 95.50 | 295.95",
+    "A2": "1005215 | Boss Skjorte, Blue | 95,50 | 295,95",
+    "AE": "1005216 | Boss Skjorte, Green | 95,50 | 295,95",
+    "AF": "1005217 | Boss Skjorte, Gray | 95,50 | 295,95",
+    "AG": "1005218 | Boss Skjorte, White| 95,50 | 295,95",
+    "AI": "1005214 | Boss Pant, Red | 195,50 | 395,95",
+    "AL": "1005215 | Boss Pant, Blue | 195,50 | 395,95",
+    "AM": "1005216 | Boss Pant, Green | 195,50 | 395,95",
+    "AN": "1005217 | Boss Pant, Gray | 195,50 | 395,95",
+    "AO": "1005218 | Boss Pant, White | 195,50 | 395,95",
+    "AQ": "1005214 | Nike Skjorte, Red | 95 | 295",
+    "AR": "1005215 | Nike Skjorte, Blue | 95 | 295",
+    "AS": "1005216 | Nike Skjorte, Green | 95 | 295",
+    "AT": "1005217 | Nike Skjorte, Gray | 95 | 295",
+    "AU": "1005218 | Nike Skjorte, White | 95,50 | 295,95",
+    "AW": "1005214 | Addidas T-shirt, Red | 45,50 | 100,95",
+    "AX": "1005215 | Addidas T-shirt, Blue | 45,50 | 100,95",
+    "AZ": "1005216 | Addidas T-shirt, Green | 45,50 | 100,95",
+    "BA": "1005217 | Addidas T-shirt, Gray | 45,50 | 100,95",
+    "BB": "1005218 | Addidas T-shirt, White | 45,50 | 100,95"
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>S R S</title>
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+ 	</head>
+ 	<body>
+	<div class="container-fluid">
+		<div class="row main-content">       	
+				<form id='students' method='post' name='students' action='#'>
+					<div class="table-responsive">
+					  	<table class="table table-bordered">
+							<tr>
+							    <th><input class='check_all' type='checkbox' onclick="select_all()"/></th>
+							    <th>SL</th>
+								<th>Vare Nummer</th>
+							    <th>Navn</th>
+							    <th>S</th>
+							    <th>M</th>
+							    <th>L</th>
+								<th>XL</th>
+							    <th>XXL</th>
+							    <th>XXXL</th>
+								<th>Indkobspris</th>
+							    <th>Slagspris</th>
+							    <th><b>Total</b></th>
+							</tr>
+							<tr>
+						    	<td><input type='checkbox' class='case'/></td>
+						    	<td><span id='snum'>1.</span></td>
+								<td><input class="form-control autocomplete_txt" type='text' data-type="VareNummer" id='varenummer_1' name='varenummer[]'/></td>
+						   	 	<td><input class="form-control autocomplete_txt" type='text' data-type="navn" id='navn_1' name='navn[]'/></td>
+						    	<td><input class="form-control autocomplete_txt" type='text' data-type="s" id='s_1' name='s[]'/></td>
+						    	<td><input class="form-control autocomplete_txt" type='text' data-type="m" id='m_1' name='m[]'/></td>
+						    	<td><input class="form-control autocomplete_txt" type='text' data-type="l" id='l_1' name='l[]'/> </td>
+								<td><input class="form-control autocomplete_txt" type='text' data-type="xl" id='xl_1' name='xl[]'/></td>
+						    	<td><input class="form-control autocomplete_txt" type='text' data-type="xxl" id='xxl_1' name='xxl[]'/></td>
+						    	<td><input class="form-control autocomplete_txt" type='text' data-type="xxxl" id='xxxl_1' name='xxxl[]'/> </td>
+								<td><input class="form-control autocomplete_txt" type='text' data-type="Indkobspris" id='indkobspris_1' name='indkobspris[]'/></td>
+						    	<td><input class="form-control autocomplete_txt" type='text' data-type="Slagspris" id='slagspris_1' name='slagspris[]'/></td>
+						    	<td><input class="form-control" type='text' data-type="Total" id='total_1' name='total[]'/> </td>
+						  	</tr>
+					  	</table>
+					  	<button type="button" class='btn btn-danger delete'>- Delete</button>
+						<button type="button" class='btn btn-success addmore'>+ Add More</button>
+					</div>
+				</form>
+		</div>	
+	</div><!-- /container -->
+	<div class="clearfix"></div>
+	<!-- Footer -->
+    <!-- /Footer -->
+
+	
+	
+	
+	  <!--  <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>-->
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script>
+    window.onload = function() {
+  		document.getElementById("navn_1").focus();
+	};
+	$('#varenummer_1').on('input', function(){
+      //alert($(this).val());
+	  $("#varenummer_1").prop("readonly", true);
+    });
+    </script>
+	<script src="js/auto.js"></script>
+	
+  </html>

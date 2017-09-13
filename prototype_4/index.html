@@ -1,0 +1,423 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Welcome to Bestillingsside</title>
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css" />
+<link rel="stylesheet" href="css/foundation.css" />
+<script src="js/vendor/modernizr.js"></script>
+</head>
+<body>
+<div class="row">
+  <div class="large-12 columns">
+    <h1>Welcome to Bestillingsside</h1>
+    <hr/>
+  </div>
+</div>
+<div class="row">
+  <div class="large-9 columns" role="content">
+    <article>
+      <div class="row">
+        <div class="large-12 medium-12 columns">
+          <div class="row">
+            <div class="large-12 columns"> <a href="#" id="popup" data-reveal-id="myModal"></a>
+              <div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+                <div class="row">
+                  <div class="large-8 columns">
+                    <div class="row collapse prefix-radius">
+                      <div class="small-3 columns"> <span class="prefix">Product Name:</span> </div>
+                      <div class="small-9 columns">
+                        <input class="button" type="text" id="p_details" readonly>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="large-12 columns">
+                    <h3 style="text-align:center;">Enter your product quantity by size</h3>
+                  </div>
+                  <div class="large-2 columns">
+                    <input name="sf" id="s" type="number" min='0' step='1' placeholder="s" />
+                  </div>
+                  <div class="large-2 columns">
+                    <input id="m" type="number" min='0' step='1' placeholder="m" />
+                  </div>
+                  <div class="large-2 columns">
+                    <input id="l" type="number" min='0' step='1' placeholder="l" />
+                  </div>
+                  <div class="large-2 columns">
+                    <input id="xl" type="number" min='0' step='1' placeholder="xl" />
+                  </div>
+                  <div class="large-2 columns">
+                    <input id="xxl" type="number" min='0' step='1' placeholder="xxl" />
+                  </div>
+                  <div class="large-2 columns">
+                    <input id="xxxl" type="number" min='0' step='1' placeholder="xxxl" />
+                  </div>
+                </div>
+                <input class="close-reveal-modal tiny primary button addmore " type="button" value="Add">
+                <a class="close-reveal-modal" aria-label="Close">&nbsp;  &nbsp;</a> </div>
+              <div class="row">
+                <div class="large-9 columns" role="content">
+                  <div>
+                    <input type="search" name="product" id="autocomplete-dynamic" list="products" placeholder="Products" autofocus/>
+                  </div>
+                </div>
+                <aside class="large-3 columns">
+                  <select id="coton">
+                    <option value="Buktik #1">Buktik #1</option>
+                    <option value="Buktik #2">Buktik #2</option>
+                    <option value="Buktik #3">Buktik #3</option>
+                    <option value="Buktik #4">Buktik #4</option>
+                  </select>
+                  <select id="time">
+                    <option value="Spring '15">Spring '15</option>
+                    <option value="Spring '16">Spring '16</option>
+                    <option value="Spring '17">Spring '17</option>
+                    <option value="Spring '18">Spring '18</option>
+                  </select>
+                </aside>
+              </div>
+            </div>
+          </div>
+          <hr />
+        </div>
+        <div class="large-12 medium-12 columns">
+          <table class="table table-bordered">
+              <tr>
+                <th>&nbsp;</th>
+                <th class="pslNumber">SL</th>
+                <th class="psNumber">Vare Nummer</th>
+                <th class="psName">Navn</th>
+                <th class="pSizeWidth">S</th>
+                <th class="pSizeWidth">M</th>
+                <th class="pSizeWidth">L</th>
+                <th class="pSizeWidth">XL</th>
+                <th class="pSizeWidth">XXL</th>
+                <th class="pSizeWidth">XXXL</th>
+                <th class="pSpWidth">Indkøbspris</th>
+                <th class="pSpWidth">Salgspris</th>
+                <th class="pTotalWidth"><b>Total</b></th>
+                </tr>
+            <tr>
+              <td><input type='checkbox' class='case'/></td>
+              <td><span id='snum'>1.</span></td>
+              <td><input class="form-control autocomplete_txt VareNummer" type='text' data-type="VareNummer" id='varenummer_1' name='varenummer[]'/></td>
+              <td><input class="form-control autocomplete_txt navn" type='text' data-type="navn" id='navn_1' name='navn[]'/></td>
+              <td class="size"><input class="form-control autocomplete_txt s" type='number' min='0' step='1' data-type="s" id='s_1' name='s[]'/></td>
+              <td class="size"><input class="form-control autocomplete_txt m" type='number' min='0' step='1' data-type="m" id='m_1' name='m[]'/></td>
+              <td class="size"><input class="form-control autocomplete_txt l" type='number' min='0' step='1' data-type="l" id='l_1' name='l[]'/></td>
+              <td class="size"><input class="form-control autocomplete_txt xl" type='number' min='0' step='1' data-type="xl" id='xl_1' name='xl[]'/></td>
+              <td class="size"><input class="form-control autocomplete_txt xxl" type='number' min='0' step='1' data-type="xxl" id='xxl_1' name='xxl[]'/></td>
+              <td class="size"><input class="form-control autocomplete_txt xxxl" type='number' min='0' step='1' data-type="xxxl" id='xxxl_1' name='xxxl[]'/></td>
+              <td class="sellPrice"><input class="form-control autocomplete_txt Indkobspris" type='text' data-type="Indkobspris" id='indkobspris_1' name='indkobspris[]' readonly/></td>
+              <td><input class="form-control autocomplete_txt Slagspris" type='text' data-type="Slagspris" id='slagspris_1' name='slagspris[]' readonly/></td>
+              <td class="priceTotal"><input class="form-control Total" type='text' data-type="Total" id='total_1' name='total[]' readonly/></td>
+            </tr>
+          </table>
+          <table id="totalvalue">
+            <tr>
+              <td class="ptotalHeadline" colspan="4"><b>Total</b></td>
+              <td class="pSizeTrow"><input type="text" class="totals" value="" readonly/></td>
+              <td class="pSizeTrow"><input type="text" class="totalm" value="" readonly/></td>
+              <td class="pSizeTrow"><input type="text" class="totall" value="" readonly/></td>
+              <td class="pSizeTrow"><input type="text" class="totalxl" value="" readonly/></td>
+              <td class="pSizeTrow"><input type="text" class="totalxxl" value="" readonly/></td>
+              <td class="pSizeTrow"><input type="text" class="totalxxxl" value="" readonly/></td>
+              <td class="pSizeofBlank" colspan="2"> </td>
+              <td class="pSizeofTotal" ><input type="text" class="totalall" value="" readonly/></td>
+            </tr>
+          </table>
+          <button type="button" class='tiny primary btn btn-danger delete'>- Delete</button>
+        </div>
+      </div>
+    <div class="large-12 medium-12 ">
+        <button type="button" class="tiny button secondary gem right"><b>Gem</b></button>
+    </div>
+    </article>
+  </div>
+  <aside class="large-3 columns">
+    <div class="panel">
+      <h6>Budget for <span class="forCoton"><b></b></span> til <span class="forTime"><b></b></span></h6><hr>
+      <div class="row collapse prefix-radius">
+        <div class="small-6 columns">
+          <span class="prefix">Total køb</span>
+        </div>
+        <div class="small-5 columns">
+          <input id="totalCost" type="text" placeholder="Value" readonly>
+        </div>
+        <div class="small-1 columns">
+          <a href="#" class="button postfix">Kr</a>
+        </div>
+      </div>
+      <div class="row collapse prefix-radius">
+        <div class="small-6 columns">
+          <span class="prefix">Resterende Budget</span>
+        </div>
+        <div class="small-5 columns">
+          <input id="remBudget" type="text" placeholder="Value" readonly>
+        </div>
+        <div class="small-1 columns">
+          <a href="#" class="button postfix">Kr</a>
+        </div>
+      </div>
+    </div>
+    <div class="panel">
+      <h6>Salgs potentiale</h6> <hr>
+        <div class="row collapse prefix-radius">
+        <div class="small-6 columns">
+          <span class="prefix">Ved alle vare solgte</span>
+        </div>
+        <div class="small-5 columns">
+          <input id="totalProfit" type="text" placeholder="Value" readonly>
+        </div>
+        <div class="small-1 columns">
+          <a href="#" class="button postfix">Kr</a>
+        </div>
+      </div>
+      <div class="row collapse prefix-radius">
+        <div class="small-6 columns">
+          <span class="prefix">Overskud efter udgifter</span>
+        </div>
+        <div class="small-5 columns">
+          <input id="profitAfterExpense" type="text" placeholder="Value" readonly>
+        </div>
+        <div class="small-1 columns">
+          <a href="#" class="button postfix">Kr</a>
+        </div>
+      </div>      
+    </div>
+  </aside>
+</div>
+<footer class="row">
+  <div class="large-12 columns">
+    <hr/>
+    <div class="row">
+      <div class="large-6 columns">
+        <p><small>© Copyright to Bestillingsside. </small></p>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="js/vendor/jquery.js"></script> 
+<script type="text/javascript" src="js/jquery-ui.min.js"></script> 
+<script src="js/foundation.min.js"></script> 
+<script type="text/javascript" src="js/jquery.mockjax.js"></script> 
+<script type="text/javascript" src="js/jquery.autocomplete.js"></script> 
+<script type="text/javascript" src="js/products.js"></script> 
+<script type="text/javascript" src="js/demo.js"></script> 
+<script>
+$(document).foundation('reveal', {
+    opened: function(){
+        $(this).find("input#s").first().focus();
+    }
+});
+window.onload = function() {
+  CotonAndTime();
+};
+$("select").on("change",  function() { 
+  CotonAndTime();
+});
+function CotonAndTime (){
+  var coton = $("#coton").val();
+  var time = $("#time").val();
+  $("span.forCoton b").html(coton);
+  $("span.forTime b").html(time);
+}
+function commaSeparateNumber(val){
+    while (/(\d+)(\d{3})/.test(val.toString())){
+      val = val.toString().replace(/(\d+)(\d{3})/, '$1'+'.'+'$2');
+    }
+    return val;
+}
+function TotalCalculation () {
+    var sumS = 0;
+    $(".s").each(function(){
+        sumS += +$(this).val();
+    });
+    $(".totals").val(sumS);
+    var sumM = 0;
+    $(".m").each(function(){
+        sumM += +$(this).val();
+    });
+    $(".totalm").val(sumM);
+    var sumL = 0;
+    $(".l").each(function(){
+        sumL += +$(this).val();
+    });
+    $(".totall").val(sumL);
+    var sumXL = 0;
+    $(".xl").each(function(){
+        sumXL += +$(this).val();
+    });
+    $(".totalxl").val(sumXL);
+    var sumXXL = 0;
+    $(".xxl").each(function(){
+        sumXXL += +$(this).val();
+    });
+    $(".totalxxl").val(sumXXL);
+    var sumXXXL = 0;
+    $(".xxxl").each(function(){
+        sumXXXL += +$(this).val();
+    });
+    $(".totalxxxl").val(sumXXXL);
+    var sumTotalAll = 0;
+    $(".Total").each(function(){
+        sumTotalAll += +$(this).val();
+    });
+    $(".totalall").val(commaSeparateNumber(sumTotalAll.toFixed(2).toString().replace(".", ",")));
+    $("input#totalCost").val(commaSeparateNumber(sumTotalAll.toFixed(2).toString().replace(".", ",")));
+    
+    var sumBudget = 150000;
+      sumBudget = parseFloat(sumBudget) - parseFloat(sumTotalAll); 
+    $("input#remBudget").val(commaSeparateNumber(sumBudget.toFixed(2).toString().replace(".", ",")));
+    
+    var sumTotalProfit = 0;
+    var sumProfitMargin = 2.5; 
+      sumTotalProfit = parseFloat(sumTotalAll) * parseFloat(sumProfitMargin); 
+    $("input#totalProfit").val(commaSeparateNumber(sumTotalProfit.toFixed(2).toString().replace(".", ",")));
+    
+    var profitAfterExpense = -90000;
+      profitAfterExpense = profitAfterExpense + parseFloat(sumTotalProfit); 
+    $("input#profitAfterExpense").val(commaSeparateNumber(profitAfterExpense.toFixed(2).toString().replace(".", ",")));
+}
+$(".delete").on('click', function() {
+    $('.case:checkbox:checked').parents("tr").remove();
+    $('.check_all').prop("checked", false); 
+    check();
+    TotalCalculation ();
+});
+var i=$('table tr').length;
+$(".addmore").on('click',function(){
+        var product_details = $('#autocomplete-dynamic').val();
+        var arr = product_details.split('|');
+        var VareNummerid = $('.table.table.table-bordered tr:last .VareNummer').attr('id');
+        var navnid = $('.table.table.table-bordered tr:last .navn').attr('id');
+        var indkobsprisid = $('.table.table.table-bordered tr:last .Indkobspris').attr('id');
+        var slagsprisid = $('.table.table.table-bordered tr:last .Slagspris').attr('id');
+        var totalid = $('.table.table.table-bordered tr:last .Total').attr('id');
+        var vare_number = $('#'+VareNummerid).val(arr[0]);
+        var product_name = $('#'+navnid).val(arr[1]);
+        var product_indkobspris = $('#'+indkobsprisid).val(arr[2]||0);
+        var product_slagspris = $('#'+slagsprisid).val(arr[3]);
+        
+        var sid = $('.table.table.table-bordered tr:last .s').attr('id');
+        var mid = $('.table.table.table-bordered tr:last .m').attr('id');
+        var lid = $('.table.table.table-bordered tr:last .l').attr('id');
+        var xlid = $('.table.table.table-bordered tr:last .xl').attr('id');
+        var xxlid = $('.table.table.table-bordered tr:last .xxl').attr('id');
+        var xxxlid = $('.table.table.table-bordered tr:last .xxxl').attr('id');
+        
+        var product_size_s = $('#s').val();
+        var product_size_m = $('#m').val();
+        var product_size_l = $('#l').val();
+        var product_size_xl = $('#xl').val();
+        var product_size_xxl = $('#xxl').val();
+        var product_size_xxxl = $('#xxxl').val();
+        
+        var size_s = $('#'+sid).val(product_size_s || 0);
+        var size_m = $('#'+mid).val(product_size_m || 0);
+        var size_l = $('#'+lid).val(product_size_l || 0);
+        var size_xl = $('#'+xlid).val(product_size_xl || 0);
+        var size_xxl = $('#'+xxlid).val(product_size_xxl || 0);
+        var size_xxxl = $('#'+xxxlid).val(product_size_xxxl || 0);
+        
+        var sNumberValue = $('#'+sid).val();
+        var mNumberValue = $('#'+mid).val();
+        var lNumberValue = $('#'+lid).val();
+        var xlNumberValue = $('#'+xlid).val();
+        var xxlNumberValue = $('#'+xxlid).val();
+        var xxxlNumberValue = $('#'+xxxlid).val();
+        var indkobsprisNumberValue = product_indkobspris.val();
+        
+        var sum = parseInt(sNumberValue) + parseInt(mNumberValue) + parseInt(lNumberValue) + parseInt(xlNumberValue) + parseInt(xxlNumberValue) + parseInt(xxxlNumberValue);
+        var ttl = (sum * parseFloat(indkobsprisNumberValue)|| 0);
+        $('#'+totalid).val(ttl.toFixed(2));
+        
+        count=$('table.table.table-bordered tr').length;
+        
+        var data="<tr><td><input type='checkbox' class='case'/></td>";
+        data+="<td><span id='snum"+i+"'>"+count+".</span></td>";
+        data+="<td><input class='form-control autocomplete_txt VareNummer' type='text' data-type='VareNummer' id='varenummer_"+i+"' name='varenummer[]'/></td>";
+        data+="<td><input class='form-control autocomplete_txt navn' type='text' data-type='navn' id='navn_"+i+"' name='navn[]'/></td>";
+        data+="<td class='size'><input class='form-control autocomplete_txt s' type='number' min='0' step='1' data-type='s' id='s_"+i+"' name='s[]'/></td>";
+        data+="<td class='size'><input class='form-control autocomplete_txt m' type='number' min='0' step='1' data-type='m' id='m_"+i+"' name='m[]'/></td>";
+        data+="<td class='size'><input class='form-control autocomplete_txt l' type='number' min='0' step='1' data-type='l' id='l_"+i+"' name='s[]'/></td>";
+        data+="<td class='size'><input class='form-control autocomplete_txt xl' type='number' min='0' step='1' data-type='xl' id='xl_"+i+"' name='xl[]'/></td>";
+        data+="<td class='size'><input class='form-control autocomplete_txt xxl' type='number' min='0' step='1' data-type='xxl' id='xxl_"+i+"' name='xxl[]'/></td>";
+        data+="<td class='size'><input class='form-control autocomplete_txt xxxl' type='number' min='0' step='1' data-type='xxxl' id='xxxl_"+i+"' name='xxxl[]'/></td>";
+        data+="<td class='sellPrice'><input class='form-control autocomplete_txt Indkobspris' type='text' data-type='Indkobspris' id='indkobspris_"+i+"' name='indkobspris[]' readonly/></td>";
+        data+="<td><input class='form-control autocomplete_txt Slagspris' type='text' data-type='Slagspris' id='slagspris_"+i+"' name='slagspris[]' readonly/></td>";
+        data+="<td class='priceTotal'><input class='form-control Total' type='text' data-type='Total' id='total_"+i+"' name='total[]' readonly/></td></tr>";
+        
+        $('table.table.table-bordered').append(data);
+        row = i ;
+        i++;
+        var clean="";
+        var product_details = $('#autocomplete-dynamic').val(clean);
+        var product_size_s = $('#s').val(clean);
+        var product_size_m = $('#m').val(clean);
+        var product_size_l = $('#l').val(clean);
+        var product_size_xl = $('#xl').val(clean);
+        var product_size_xxl = $('#xxl').val(clean);
+        var product_size_xxxl = $('#xxxl').val(clean);
+    
+        TotalCalculation ();
+        BindProductDetailsChangeEvents();
+        document.getElementById("autocomplete-dynamic").focus();
+      });
+$('#autocomplete-dynamic').change('input', function(){   
+        var product_details = $('#autocomplete-dynamic').val();
+        var arr = product_details.split('|');
+        showProductDetail(arr[1]);
+}); 
+var countriesArray = $.map(countries, function (value, key) { return { value: value, data: key }; });
+ // Initialize autocomplete with custom appendTo:
+    $('#autocomplete-dynamic').autocomplete({
+        lookup: countriesArray
+        , onSelect: function(i){
+          var product_details = i.value
+          var arr = product_details.split('|');
+          showProductDetail(arr[1]);
+        }
+});
+function showProductDetail (name) {
+      $('#p_details').val(name);
+      $('a#popup').click();
+}
+function select_all() {
+  $('input[class=case]:checkbox').each(function(){ 
+    if($('input[class=check_all]:checkbox:checked').length == 0){ 
+      $(this).prop("checked", false); 
+    } else {
+      $(this).prop("checked", true); 
+    } 
+  });
+}
+function check(){
+  obj=$('table.table.table-bordered tr').find('span');
+  $.each( obj, function( key, value ) {
+    id=value.id;
+    $('#'+id).html(key+1);
+  });
+}
+function BindProductDetailsChangeEvents()
+{
+  $("table.table.table-bordered tr td.size input").change(function() {
+    var spTotal = 0; 
+    var aTotal = 0;
+    
+    var input = $(this);
+    var tr = input.parents("tr:first");
+    $("td.size input", tr).each(function() {
+        var sPrice = $("td.sellPrice input", tr).val();
+        spTotal = spTotal + Number( $(this).val() );
+        aTotal = spTotal * parseFloat(sPrice);
+    });
+    $("td.priceTotal input", tr).val(aTotal.toFixed(2));
+    TotalCalculation ();
+    //commaSeparateNumber();
+});   
+}
+</script>
+</body>
+</html>

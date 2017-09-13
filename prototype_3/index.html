@@ -1,0 +1,244 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>S R S | Welcome</title>
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css" />
+<link rel="stylesheet" href="css/foundation.css" />
+<script src="js/vendor/modernizr.js"></script>
+</head>
+<body>
+<div class="row">
+  <div class="large-12 columns">
+    <h1>Welcome to SRS</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="large-12 medium-12 columns">
+    <hr />
+    <div class="row">
+      <div class="large-12 columns"> <a href="#" id="popup" data-reveal-id="myModal"></a>
+        <div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+          <div class="row">
+            <div class="large-8 columns">
+              <div class="row collapse prefix-radius">
+                <div class="small-3 columns"> <span class="prefix">Product Name:</span> </div>
+                <div class="small-9 columns">
+                  <input class="button" type="text" id="p_details" readonly>
+                </div>
+              </div>
+            </div>
+            <div class="large-12 columns">
+              <h3 style="text-align:center;">Enter your product quantity by size</h3>
+            </div>
+            <div class="large-2 columns">
+              <input name="sf" id="s" type="number" placeholder="s" />
+            </div>
+            <div class="large-2 columns">
+              <input id="m" type="number" placeholder="m" />
+            </div>
+            <div class="large-2 columns">
+              <input id="l" type="number" placeholder="l" />
+            </div>
+            <div class="large-2 columns">
+              <input id="xl" type="number" placeholder="xl" />
+            </div>
+            <div class="large-2 columns">
+              <input id="xxl" type="number" placeholder="xxl" />
+            </div>
+            <div class="large-2 columns">
+              <input id="xxxl" type="number" placeholder="xxxl" />
+            </div>
+          </div>
+          <input class="close-reveal-modal tiny primary button addmore " type="button" value="Add">
+          <a class="close-reveal-modal" aria-label="Close">&nbsp;  &nbsp;</a> </div>
+        <div>
+          <input type="search" name="product" id="autocomplete-dynamic" list="products" placeholder="Products"/>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="large-12 medium-12 columns">
+    <table class="table table-bordered">
+      <tr>
+        <th><input class='check_all' type='checkbox' onclick="select_all()"/></th>
+        <th>SL</th>
+        <th>Vare Nummer</th>
+        <th>Navn</th>
+        <th>S</th>
+        <th>M</th>
+        <th>L</th>
+        <th>XL</th>
+        <th>XXL</th>
+        <th>XXXL</th>
+        <th>Indkobspris</th>
+        <th>Slagspris</th>
+        <th><b>Total</b></th>
+      </tr>
+      <tr>
+        <td><input type='checkbox' class='case'/></td>
+        <td><span id='snum'>1.</span></td>
+        <td><input class="form-control autocomplete_txt VareNummer" type='text' data-type="VareNummer" id='varenummer_1' name='varenummer[]'/></td>
+        <td><input class="form-control autocomplete_txt navn" type='text' data-type="navn" id='navn_1' name='navn[]'/></td>
+        <td><input class="form-control autocomplete_txt s" type='number' data-type="s" id='s_1' name='s[]'/></td>
+        <td><input class="form-control autocomplete_txt m" type='number' data-type="m" id='m_1' name='m[]'/></td>
+        <td><input class="form-control autocomplete_txt l" type='number' data-type="l" id='l_1' name='l[]'/></td>
+        <td><input class="form-control autocomplete_txt xl" type='number' data-type="xl" id='xl_1' name='xl[]'/></td>
+        <td><input class="form-control autocomplete_txt xxl" type='number' data-type="xxl" id='xxl_1' name='xxl[]'/></td>
+        <td><input class="form-control autocomplete_txt xxxl" type='number' data-type="xxxl" id='xxxl_1' name='xxxl[]'/></td>
+        <td><input class="form-control autocomplete_txt Indkobspris" type='text' data-type="Indkobspris" id='indkobspris_1' name='indkobspris[]'/></td>
+        <td><input class="form-control autocomplete_txt Slagspris" type='text' data-type="Slagspris" id='slagspris_1' name='slagspris[]'/></td>
+        <td><input class="form-control Total" type='text' data-type="Total" id='total_1' name='total[]'/></td>
+      </tr>
+    </table>
+    <button type="button" class='tiny primary btn btn-danger delete'>- Delete</button>
+  </div>
+</div>
+<script src="js/vendor/jquery.js"></script> 
+<script type="text/javascript" src="js/jquery-ui.min.js"></script> 
+<script src="js/foundation.min.js"></script> 
+<script type="text/javascript" src="js/jquery.mockjax.js"></script> 
+<script type="text/javascript" src="js/jquery.autocomplete.js"></script> 
+<script type="text/javascript" src="js/products.js"></script> 
+<script type="text/javascript" src="js/demo.js"></script> 
+<script>
+$(document).foundation();
+window.onload = function() {
+  document.getElementById("autocomplete-dynamic").focus();
+};
+
+$(".delete").on('click', function() {
+    $('.case:checkbox:checked').parents("tr").remove();
+    $('.check_all').prop("checked", false); 
+    check();
+});
+var i=$('table tr').length;
+
+$(".addmore").on('click',function(){
+        var product_details = $('#autocomplete-dynamic').val();
+        var arr = product_details.split('|');
+        var VareNummerid = $('.table.table.table-bordered tr:last .VareNummer').attr('id');
+        var navnid = $('.table.table.table-bordered tr:last .navn').attr('id');
+        var indkobsprisid = $('.table.table.table-bordered tr:last .Indkobspris').attr('id');
+        var slagsprisid = $('.table.table.table-bordered tr:last .Slagspris').attr('id');
+        var totalid = $('.table.table.table-bordered tr:last .Total').attr('id');
+
+        var vare_number = $('#'+VareNummerid).val(arr[0]);
+        var product_name = $('#'+navnid).val(arr[1]);
+        var product_indkobspris = $('#'+indkobsprisid).val(arr[2]);
+        var product_slagspris = $('#'+slagsprisid).val(arr[3]);
+
+        var sid = $('.table.table.table-bordered tr:last .s').attr('id');
+        var mid = $('.table.table.table-bordered tr:last .m').attr('id');
+        var lid = $('.table.table.table-bordered tr:last .l').attr('id');
+        var xlid = $('.table.table.table-bordered tr:last .xl').attr('id');
+        var xxlid = $('.table.table.table-bordered tr:last .xxl').attr('id');
+        var xxxlid = $('.table.table.table-bordered tr:last .xxxl').attr('id');
+
+        var product_size_s = $('#s').val();
+        var product_size_m = $('#m').val();
+        var product_size_l = $('#l').val();
+        var product_size_xl = $('#xl').val();
+        var product_size_xxl = $('#xxl').val();
+        var product_size_xxxl = $('#xxxl').val();
+
+        var size_s = $('#'+sid).val(product_size_s);
+        var size_m = $('#'+mid).val(product_size_m);
+        var size_l = $('#'+lid).val(product_size_l);
+        var size_xl = $('#'+xlid).val(product_size_xl);
+        var size_xxl = $('#'+xxlid).val(product_size_xxl);
+        var size_xxxl = $('#'+xxxlid).val(product_size_xxxl);
+        
+        var sNumberValue = $('#'+sid).val();
+        //alert(product_indkobspris); 
+        var mNumberValue = $('#'+mid).val();
+        var lNumberValue = $('#'+lid).val();
+        var xlNumberValue = $('#'+xlid).val();
+        var xxlNumberValue = $('#'+xxlid).val();
+        var xxxlNumberValue = $('#'+xxxlid).val();
+        var indkobsprisNumberValue = product_indkobspris.val();  
+        //alert(indkobsprisNumberValue);
+        var sum = parseInt(sNumberValue) + parseInt(mNumberValue) + parseInt(lNumberValue) + parseInt(xlNumberValue) + parseInt(xlNumberValue) + parseInt(xxlNumberValue);
+        //alert(sum);
+        var ttl = sum * parseInt(indkobsprisNumberValue);
+        //alert(ttl);
+        $('#'+totalid).val(ttl);
+        
+        count=$('table tr').length;
+        
+        var data="<tr><td><input type='checkbox' class='case'/></td>";
+        data+="<td><span id='snum"+i+"'>"+count+".</span></td>";
+        data+="<td><input class='form-control autocomplete_txt VareNummer' type='text' data-type='VareNummer' id='varenummer_"+i+"' name='varenummer[]'/></td>";
+        data+="<td><input class='form-control autocomplete_txt navn' type='text' data-type='navn' id='navn_"+i+"' name='navn[]'/></td>";
+        data+="<td><input class='form-control autocomplete_txt s' type='number' data-type='s' id='s_"+i+"' name='s[]'/></td>";
+        data+="<td><input class='form-control autocomplete_txt m' type='number' data-type='m' id='m_"+i+"' name='m[]'/></td>";
+        data+="<td><input class='form-control autocomplete_txt l' type='number' data-type='l' id='l_"+i+"' name='s[]'/></td>";
+        data+="<td><input class='form-control autocomplete_txt xl' type='number' data-type='xl' id='xl_"+i+"' name='xl[]'/></td>";
+        data+="<td><input class='form-control autocomplete_txt xxl' type='number' data-type='xxl' id='xxl_"+i+"' name='xxl[]'/></td>";
+        data+="<td><input class='form-control autocomplete_txt xxxl' type='number' data-type='xxxl' id='xxxl_"+i+"' name='xxxl[]'/></td>";
+        data+="<td><input class='form-control autocomplete_txt Indkobspris' type='text' data-type='Indkobspris' id='indkobspris_"+i+"' name='indkobspris[]'/></td>";
+        data+="<td><input class='form-control autocomplete_txt Slagspris' type='text' data-type='Slagspris' id='slagspris_"+i+"' name='slagspris[]'/></td>";
+        data+="<td><input class='form-control Total' type='text' data-type='Total' id='total_"+i+"' name='total[]'/></td></tr>";
+        
+        $('table').append(data);
+        row = i ;
+        i++;
+
+        var clean="";
+        var product_details = $('#autocomplete-dynamic').val(clean);
+        var product_size_s = $('#s').val(clean);
+        var product_size_m = $('#m').val(clean);
+        var product_size_l = $('#l').val(clean);
+        var product_size_xl = $('#xl').val(clean);
+        var product_size_xxl = $('#xxl').val(clean);
+        var product_size_xxxl = $('#xxxl').val(clean);
+      });
+
+$('#autocomplete-dynamic').change('input', function(){   
+        var product_details = $('#autocomplete-dynamic').val();
+        var arr = product_details.split('|');
+        showProductDetail(arr[1]);
+});
+ 
+ 
+var countriesArray = $.map(countries, function (value, key) { return { value: value, data: key }; });
+ // Initialize autocomplete with custom appendTo:
+    $('#autocomplete-dynamic').autocomplete({
+        lookup: countriesArray
+        , onSelect: function(i){
+          var product_details = i.value
+          var arr = product_details.split('|');
+          showProductDetail(arr[1]);
+        }
+    });
+
+    function showProductDetail (name) {
+      $('#p_details').val(name);
+
+      $('a#popup').click();
+      $('input#s').focus();
+    }
+
+
+function select_all() {
+  $('input[class=case]:checkbox').each(function(){ 
+    if($('input[class=check_all]:checkbox:checked').length == 0){ 
+      $(this).prop("checked", false); 
+    } else {
+      $(this).prop("checked", true); 
+    } 
+  });
+}
+
+function check(){
+  obj=$('table tr').find('span');
+  $.each( obj, function( key, value ) {
+    id=value.id;
+    $('#'+id).html(key+1);
+  });
+}
+
+</script>
+</body>
+</html>
